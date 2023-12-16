@@ -1,0 +1,56 @@
+<template>
+  <!--card Audio-->
+  <div class="field has-addons pb-1">
+    <div class="control">
+      <input
+        class="input is-primary has-background-primary-light"
+        type="text"
+        :value="ObjAudio.nombre"
+        readonly
+      />
+    </div>
+    <div class="control ">
+      <a class="button is-primary" @click="reproducir(ObjAudio.ruta)">
+        <span class="file-icon p-0 m-0">
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fas"
+            data-icon="play-circle"
+            class="svg-inline--fa fa-play-circle fa-w-16"
+            role="img"
+            viewBox="0 0 512 512"
+            width="100%"
+            height="100%"
+          >
+            <path
+              fill="currentColor"
+              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm115.7 272l-176 101c-15.8 8.8-35.7-2.5-35.7-21V152c0-18.4 19.8-29.8 35.7-21l176 107c16.4 9.2 16.4 32.9 0 42z"
+            ></path>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+  <!--/card Audio-->
+</template>
+
+<script>
+export default {
+    name: 'AudioItem',
+    props: {
+    ObjAudio: Object,
+  },
+  data(){
+    return{
+      url_base: import.meta.env.VITE_APP_BACKEND_API
+    }
+  },
+  methods: {
+    reproducir(url){
+      const song = new Audio(url)
+      song.play();
+    }
+  }
+}
+</script>
