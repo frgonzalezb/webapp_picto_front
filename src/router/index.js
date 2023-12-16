@@ -1,23 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import MisRutinas from "../views/MisRutinas.vue";
-import MisPictogramas from "../views/MisPictogramas.vue";
-import MisAudios from "../views/MisAudios.vue";
-import MiCuenta from "../views/MiCuenta.vue";
-import CrearNuevaRutina from "../views/CrearNuevaRutina.vue";
-import RutinaActiva from "../views/RutinaActiva.vue";
-import Dashboard from "../views/Dashboard.vue";
-import Login from "../views/Login.vue";
-import Registro from "../views/Registro.vue";
-import ActivateAccount from "../views/ActivateAccount.vue";
-import forgotPassword from "../views/ForgotPassword.vue";
-import resetPassword from "../views/ResetPassword.vue";
-import ContactForm from "../views/ContactForm.vue";
-import Error404 from "../views/Error404.vue";
+import MisRutinas from "@/views/MisRutinas.vue";
+import MisPictogramas from "@/views/MisPictogramas.vue";
+import MisAudios from "@/views/MisAudios.vue";
+import MiCuenta from "@/views/MiCuenta.vue";
+import CrearNuevaRutina from "@/views/CrearNuevaRutina.vue";
+import RutinaActiva from "@/views/RutinaActiva.vue";
+import Dashboard from "@/views/Dashboard.vue";
+import Login from "@/views/Login.vue";
+import Registro from "@/views/Registro.vue";
+import ActivateAccount from "@/views/ActivateAccount.vue";
+import forgotPassword from "@/views/ForgotPassword.vue";
+import resetPassword from "@/views/ResetPassword.vue";
+import ContactForm from "@/views/ContactForm.vue";
+import Error404 from "@/views/Error404.vue";
 
-import Index from "../views/Index.vue"
+import Index from "@/views/Index.vue"
 
-import store from '../store/index';
+import store from '@/store/index';
 
 
 const routes = [

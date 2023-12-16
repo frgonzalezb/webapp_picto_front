@@ -13,7 +13,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import axiosInstance from '../../services/axios';
+import axiosInstance from '@/services/axios';
 
 export default {
   name: 'storageMonitor',
@@ -78,7 +78,6 @@ export default {
     },
     formatBytes(bytes) {
       const kilobytes = Math.round((bytes / 1024) * 100) / 100;
-
       return kilobytes.toLocaleString('es-ES');
     },
     getRemainingStorageStyle() {

@@ -22,10 +22,10 @@ import user from "./modules/Users/user";
 
 import ModalPictogramaList from "./modules/ModalPictogramaList/ModalPictogramaList";
 
-import axiosInstance from '../services/axios';
-import refreshTokenInstance from '../services/refreshToken';
+import axiosInstance from '@/services/axios';
+import refreshTokenInstance from '@/services/refreshToken';
 
-import router from '../router/index';
+import router from '@/router/index';
 
 
 export default createStore({

@@ -1,4 +1,4 @@
-import axiosInstance from '../../../services/axios';
+import axiosInstance from '@/services/axios';
 
 export default {
     namespaced: true,
@@ -54,15 +54,19 @@ export default {
         },
 
         async SearchAudioObj({ commit }, id) {
-            const response = await axiosInstance.get(`${import.meta.env.VITE_APP_BACKEND_API}/audios/${id}/`);
-            commit('SearchAudioObj', response.data)
+            try {
+                const response = await axiosInstance.get(`/audios/${id}/`);
+                commit('SearchAudioObj', response.data)
+            } catch (error) {
+                const response = error.response;
+                return response;
+            }
+            
         },
 
         async DeleteAudioObj({ commit }, id) {
             try {
-                const response = await axiosInstance.delete(
-                    `${import.meta.env.VITE_APP_BACKEND_API}/audios/${id}/`
-                );
+                const response = await axiosInstance.delete(`/audios/${id}/`);
                 return response;
 
             } catch (error) {
@@ -74,7 +78,7 @@ export default {
         async UpdateAudioObj({ commit }, data) {
             try {
                 const response = await axiosInstance.put(
-                    `${import.meta.env.VITE_APP_BACKEND_API}/audios/${data.id}/`, 
+                    `/audios/${data.id}/`, 
                     data.data
                 );
                 return response;
@@ -88,7 +92,7 @@ export default {
         async CreateAudioObj({ commit }, data) {
             try {
                 const response = await axiosInstance.post(
-                    `${import.meta.env.VITE_APP_BACKEND_API}/audios/`, 
+                    `/audios/`, 
                     data
                 );
                 return response;

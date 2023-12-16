@@ -1,4 +1,4 @@
-import axiosInstance from '../../../services/axios';
+import axiosInstance from '@/services/axios';
 
 export default {
   namespaced: true,
@@ -40,7 +40,7 @@ export default {
   actions: {
     async get_rutinas({ commit }) {
       const response = await axiosInstance.get(
-        `${import.meta.env.VITE_APP_BACKEND_API}/rutinas/`
+        `/rutinas/`
       );
       commit("llenarRutinas", response.data);
     },

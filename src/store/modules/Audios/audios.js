@@ -1,4 +1,4 @@
-import axiosInstance from '../../../services/axios';
+import axiosInstance from '@/services/axios';
 
 export default {
   namespaced: true,
@@ -40,9 +40,7 @@ export default {
   actions: {
     async get_audios({ commit }) {
       try {
-        const response = await axiosInstance.get(
-          `${import.meta.env.VITE_APP_BACKEND_API}/audios/`
-        );
+        const response = await axiosInstance.get(`/audios/`);
         commit("llenarAudios", response.data);
       } catch (error) {
         return error.response;

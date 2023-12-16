@@ -6,7 +6,7 @@
 
 <script>
 import { mapState, mapActions } from "vuex";
-import axiosInstance from '../services/axios';
+import axiosInstance from '@/services/axios';
 
 export default {
   data() {
