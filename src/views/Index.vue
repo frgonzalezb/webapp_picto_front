@@ -32,6 +32,18 @@ export default {
   mounted() {
     document.title = "PICTO - Inicio";
     this.ActiveNav();
+    const text = 'Esta es una versión de prueba de PICTO, que estará vigente \
+      por un tiempo limitado. Es posible que algunas características tengan \
+      algunos errores en su funcionamiento. Si quieres ayudarnos, puedes \
+      utilizar el formulario de contacto para notificarnos de algún problema \
+      o contactarnos a través de nuestro Instagram (ver abajo).\n\n \
+      Atentamente, el equipo de PICTO.'
+    this.$swal.fire({
+      title: "Antes de comenzar...",
+      text: text,
+      icon: "warning",
+      confirmButtonText: 'Entendido'
+    });
   },
   methods: {
     ...mapActions("navBar", ["ActiveNav", "InactiveNav"]),
