@@ -9,12 +9,20 @@
       </div>
       <p class="card-header-title is-centered">{{ audio.nombre }}</p>
       <div class="buttons is-centered">
-        <button @click="UpdateAudio" class="button is-small is-info" :disabled="audio.es_precargado && !isStaff">
+        <button 
+          @click="UpdateAudio" 
+          class="button is-small is-info" 
+          :disabled="audio.es_precargado && !userIsStaff"
+        >
           <span class="file-icon p-0 m-0">
             <EditSVG />
           </span>
         </button>
-        <button @click="DeleteAudio" class="button is-small is-danger" :disabled="audio.es_precargado && !isStaff">
+        <button 
+          @click="DeleteAudio" 
+          class="button is-small is-danger" 
+          :disabled="audio.es_precargado && !userIsStaff"
+        >
           <span class="file-icon p-0 m-0">
             <DeleteSVG />
           </span>
@@ -48,8 +56,8 @@ export default {
   mounted() {
   },
   computed: {
-    isStaff() {
-      return this.$store.state.isStaff;
+    userIsStaff() {
+      return this.UserObj.isStaff;
     },
   },
   methods: {
