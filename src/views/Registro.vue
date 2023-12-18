@@ -139,7 +139,7 @@ export default {
     return {
       showPassword: false,
       acceptTerms: false,
-      termsEndpoint: 'api/terms-and-conditions/',
+      termsEndpoint: '/api/terms-and-conditions/',
       formData: {
         name: '',
         email: '',

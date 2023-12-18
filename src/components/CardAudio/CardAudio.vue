@@ -25,8 +25,6 @@
   <!--/card Audio-->
 </template>
 
-
-
 <script>
 import { mapActions } from "vuex";
 
@@ -90,7 +88,7 @@ export default {
                 } else {
                   this.$swal.fire({
                     title: "¡Error!",
-                    text: "¡Ups! Ocurrio un Inconveniente ERROSILLO 1 CARD",
+                    text: "¡Ups! Ocurrio un Inconveniente",
                     icon: "error",
                     confirmButtonColor: "#1e9c96",
                     confirmButtonText: "OK",
@@ -100,7 +98,7 @@ export default {
             } catch (error) {
               this.$swal.fire({
                 title: "¡Error!",
-                text: "¡Ups! Ocurrio un Inconveniente ERRORSILLO 2 CARD",
+                text: "¡Ups! Ocurrio un error insperado",
                 icon: "error",
                 confirmButtonColor: "#1e9c96",
                 confirmButtonText: "OK",
