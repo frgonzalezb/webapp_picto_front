@@ -78,7 +78,7 @@ export default createStore({
     async authenticate({ commit }, data) {
       try {
         const response = await axiosInstance.post(
-          `/api/login/`, 
+          `${import.meta.env.VITE_APP_BACKEND_API}/api/login/`, 
           data    
         );
         return response;
