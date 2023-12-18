@@ -51,7 +51,6 @@ export default createStore({
     },
     updateStorageData(state, storageData) {
       state.storageData = storageData;
-      console.log('updateStorageData', storageData);
     },
     clearStorageData(state) {
       state.storageData = null;

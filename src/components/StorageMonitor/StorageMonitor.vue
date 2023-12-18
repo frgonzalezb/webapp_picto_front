@@ -27,7 +27,6 @@ export default {
     ...mapState("user", ["UserObj"]),
 
     userId() {
-      console.log('userId', this.UserObj.id);
       return this.UserObj.id;
     },
     endpoint() {
@@ -68,7 +67,6 @@ export default {
       try {
         const endpoint = this.endpoint;
         const response = await axiosInstance.get(endpoint);
-        console.log('fetchStorageData', response.data);
         this.storageData = response.data;
         this.$store.commit('updateStorageData', this.storageData);
 
