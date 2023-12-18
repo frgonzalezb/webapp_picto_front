@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 import DeleteSVG from "@/components/Icons/DeleteSVG/DeleteSVG.vue";
 import EditSVG from "@/components/Icons/EditSVG/EditSVG.vue";
@@ -57,7 +57,7 @@ export default {
   },
   computed: {
     ...mapState('user', ['UserObj']),
-    
+
     userIsStaff() {
       return this.UserObj.isStaff;
     },
