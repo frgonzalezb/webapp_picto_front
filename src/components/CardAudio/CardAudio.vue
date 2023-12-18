@@ -56,6 +56,8 @@ export default {
   mounted() {
   },
   computed: {
+    ...mapState('user', ['UserObj']),
+    
     userIsStaff() {
       return this.UserObj.isStaff;
     },
