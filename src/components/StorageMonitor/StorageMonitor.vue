@@ -13,7 +13,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import axiosInstance from '../../services/axios';
+import axiosInstance from '@/services/axios';
 
 export default {
   name: 'storageMonitor',
@@ -27,6 +27,7 @@ export default {
     ...mapState("user", ["UserObj"]),
 
     userId() {
+      console.log('userId', this.UserObj.id);
       return this.UserObj.id;
     },
     endpoint() {
@@ -67,6 +68,7 @@ export default {
       try {
         const endpoint = this.endpoint;
         const response = await axiosInstance.get(endpoint);
+        console.log('fetchStorageData', response.data);
         this.storageData = response.data;
         this.$store.commit('updateStorageData', this.storageData);
 
@@ -78,7 +80,6 @@ export default {
     },
     formatBytes(bytes) {
       const kilobytes = Math.round((bytes / 1024) * 100) / 100;
-
       return kilobytes.toLocaleString('es-ES');
     },
     getRemainingStorageStyle() {

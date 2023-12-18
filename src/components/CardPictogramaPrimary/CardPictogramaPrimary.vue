@@ -11,14 +11,22 @@
       <div class="field has-addons has-addons-centered">
 
         <!-- Botón de Editar -->
-        <button @click="updatePictograma" class="button is-small is-info mr-2" :disabled="pictograma.es_precargado && !isStaff">
+        <button 
+          @click="updatePictograma" 
+          class="button is-small is-info mr-2" 
+          :disabled="pictograma.es_precargado && !userIsStaff"
+        >
           <span class="file-icon p-0 m-0">
             <EditSVG />
           </span>
         </button>
 
         <!-- Botón de Eliminar -->
-        <button @click="deletePictograma" class="button is-small is-danger" :disabled="pictograma.es_precargado && !isStaff">
+        <button 
+          @click="deletePictograma" 
+          class="button is-small is-danger" 
+          :disabled="pictograma.es_precargado && !userIsStaff"
+        >
           <span class="file-icon p-0 m-0">
             <DeleteSVG />
           </span>
@@ -32,7 +40,7 @@
 
 
 <script>
-import { mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 import DeleteSVG from "@/components/Icons/DeleteSVG/DeleteSVG.vue";
 import EditSVG from "@/components/Icons/EditSVG/EditSVG.vue";
@@ -52,8 +60,10 @@ export default {
     };
   },
   computed: {
-    isStaff() {
-      return this.$store.state.isStaff;
+    ...mapState('user', ['UserObj']),
+
+    userIsStaff() {
+      return this.UserObj.isStaff;
     },
   },
   mounted() { },

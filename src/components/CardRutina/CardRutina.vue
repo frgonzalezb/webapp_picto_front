@@ -8,7 +8,7 @@
           :src="rutina.url_portada" />
           <img 
           v-else
-          src="../../assets/Img/otros/rutinaDefault.jpg" />
+          src="@/assets/Img/otros/rutinaDefault.jpg" />
         </figure>
       </div>
     </router-link>

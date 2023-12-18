@@ -18,8 +18,8 @@ export function getCookie(name) {
 export function setCookie(name, value, options = {}, expiration) {
   options = {
     path: '/',
-    sameSite: 'Lax',
-    secure: false,
+    sameSite: 'None',
+    secure: true,
     ...options,
   };
 

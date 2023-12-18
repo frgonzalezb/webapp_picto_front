@@ -132,24 +132,30 @@ export default {
     },
 
     storeData(response) {
-      const accessToken = response.data.token;
-      const refreshToken = response.data.refresh_token;
-      const userId = response.data.user.id;
-      const userName = response.data.user.name;
-      const userEmail = response.data.user.email;
-      const isStaff = response.data.user.is_staff;
-      const isAuthenticated = true
-      
-      this.cleanValue();
+      try {
+        const accessToken = response.data.token;
+        const refreshToken = response.data.refresh_token;
+        const userId = response.data.user.id;
+        const userName = response.data.user.name;
+        const userEmail = response.data.user.email;
+        const isStaff = response.data.user.is_staff;
+        const isAuthenticated = true
+        
+        this.cleanValue();
 
-      this.setId(userId);
-      this.setName(userName);
-      this.setEmail(userEmail);
-      this.setIsStaff(isStaff);
-      this.setIsAuthenticated(isAuthenticated);
+        this.setId(userId);
+        this.setName(userName);
+        this.setEmail(userEmail);
+        this.setIsStaff(isStaff);
+        this.setIsAuthenticated(isAuthenticated);
 
-      this.$store.dispatch('user/storeUserObjInSessionStorage');
-      this.$store.dispatch('saveTokens', { accessToken, refreshToken });
+        this.$store.dispatch('user/storeUserObjInSessionStorage');
+        this.$store.dispatch('saveTokens', { accessToken, refreshToken });
+      } catch (error) {
+        const msg = 'Ocurrió un error inesperado con su solicitud. \
+          Si el problema persiste, contacte al amdinistrador.'
+        console.error(msg);
+      }
     },
 
     async onSubmit() {

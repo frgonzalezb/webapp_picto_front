@@ -138,7 +138,7 @@ export default {
       'UpdateUserObj',
       'DeactivateUserObj'
     ]),
-    ...mapActions(['clearTokens']),
+    ...mapActions(['clearTokens', 'clearStorageData']),
 
     fetchUserData() {
       try {
@@ -416,6 +416,8 @@ export default {
                     icon: "success"
                   });
                   this.clearTokens();
+                  this.clearStorageData();
+                  this.cleanValue();
                   this.$router.push('/');
 
                 } else {

@@ -33,3 +33,5 @@ coverage
 .env.development
 rundev.bat
 .vscode/extensions.json
+cert.pem
+key.pem

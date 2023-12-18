@@ -1,4 +1,4 @@
-import axiosInstance from '../../../services/axios';
+import axiosInstance from '@/services/axios';
 
 export default {
   namespaced: true,
@@ -69,7 +69,7 @@ export default {
 
     async SearchRutinaObj({ commit }, id) {
       const response = await axiosInstance.get(
-        `${import.meta.env.VITE_APP_BACKEND_API}/rutinas/${id}/`
+        `/rutinas/${id}/`
       );
       commit("SearchRutinaObj", response.data);
       return response;
@@ -77,7 +77,7 @@ export default {
 
     async SearchRutinaObjForUpdate({ commit }, id) {
       const response = await axiosInstance.get(
-        `${import.meta.env.VITE_APP_BACKEND_API}/rutinas/${id}/`
+        `/rutinas/${id}/`
       );
       commit("SearchRutinaObjForUpdate", response.data);
     },
@@ -85,7 +85,7 @@ export default {
     async DeleteRutinaObj({ commit }, id) {
       try {
         const response = await axiosInstance.delete(
-          `${import.meta.env.VITE_APP_BACKEND_API}/rutinas/${id}/`
+          `/rutinas/${id}/`
         );
         return response;
 
@@ -98,7 +98,7 @@ export default {
     async UpdateRutinaObj({ commit }, data) {
       try {
         const response = await axiosInstance.put(
-          `${import.meta.env.VITE_APP_BACKEND_API}/rutinas/${data.id}/`,
+          `/rutinas/${data.id}/`,
           data.data
         );
         return response;
@@ -112,7 +112,7 @@ export default {
     async CreateRutinaObj({ commit }, data) {
       try {
         const response = await axiosInstance.post(
-          `${import.meta.env.VITE_APP_BACKEND_API}/rutinas/`,
+          `/rutinas/`,
           data
         );
         return response;

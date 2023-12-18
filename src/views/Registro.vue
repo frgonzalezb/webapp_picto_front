@@ -128,7 +128,7 @@
 <script>
 import { mapActions } from "vuex";
 import vueRecaptcha from 'vue3-recaptcha2';
-import axiosInstance from "../services/axios";
+import axiosInstance from "@/services/axios";
 
 export default {
   name: "registro",
@@ -139,7 +139,7 @@ export default {
     return {
       showPassword: false,
       acceptTerms: false,
-      termsEndpoint: 'api/terms-and-conditions/',
+      termsEndpoint: '/api/terms-and-conditions/',
       formData: {
         name: '',
         email: '',

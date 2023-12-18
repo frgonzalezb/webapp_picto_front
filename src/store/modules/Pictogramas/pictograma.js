@@ -1,4 +1,4 @@
-import axiosInstance from '../../../services/axios';
+import axiosInstance from '@/services/axios';
 
 export default {
     namespaced: true,
@@ -56,7 +56,7 @@ export default {
         async CreatePictogramaObj({ commit }, data) {
             try {
                 const response = await axiosInstance.post(
-                    `${import.meta.env.VITE_APP_BACKEND_API}/pictogramas/`, 
+                    `/pictogramas/`, 
                     data    
                 );
                 return response;
@@ -69,7 +69,7 @@ export default {
         
         async SearchPictogramaObj({ commit }, id) {
             const response = await axiosInstance.get(
-                `${import.meta.env.VITE_APP_BACKEND_API}/pictogramas/${id}/`
+                `/pictogramas/${id}/`
             );
             commit('SearchPictogramaObj', response.data)
         },
@@ -77,7 +77,7 @@ export default {
         async UpdatePictogramaObj({ commit }, data) {
             try {
                 const response = await axiosInstance.put(
-                    `${import.meta.env.VITE_APP_BACKEND_API}/pictogramas/${data.id}/`, 
+                    `/pictogramas/${data.id}/`, 
                     data.data
                 );
                 return response;
@@ -91,7 +91,7 @@ export default {
         async DeletePictogramaObj({ commit }, id) {
             try {
                 const response = await axiosInstance.delete(
-                    `${import.meta.env.VITE_APP_BACKEND_API}/pictogramas/${id}/`
+                    `/pictogramas/${id}/`
                 );
                 return response;
 

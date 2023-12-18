@@ -76,7 +76,7 @@ export default {
     async CreateUserObj({ commit }, data) {
       try {
         const response = await axiosInstance.post(
-          `${import.meta.env.VITE_APP_BACKEND_API}/api/register/`,
+          `/api/register/`,
           data
         );
         return response;
@@ -88,7 +88,7 @@ export default {
     async SearchUserObj({ commit }, id) {
       try {
         const response = await axiosInstance.get(
-          `${import.meta.env.VITE_APP_BACKEND_API}/usuarios/${id}/`
+          `/usuarios/${id}/`
         );
         commit("SearchUserObj", response.data);
       } catch (error) {
@@ -99,7 +99,7 @@ export default {
     async UpdateUserObj({ commit }, data) {
       try {
         const response = await axiosInstance.put(
-          `${import.meta.env.VITE_APP_BACKEND_API}/usuarios/${data.id}/`,
+          `/usuarios/${data.id}/`,
           data
         );
         return response;
@@ -111,7 +111,7 @@ export default {
     async DeactivateUserObj({ commit }, id) {
       try {
         const response = await axiosInstance.post(
-          `${import.meta.env.VITE_APP_BACKEND_API}/api/deactivate/${id}/`
+          `/api/deactivate/${id}/`
         );
         return response;
       } catch (error) {
@@ -121,9 +121,10 @@ export default {
     // Password reset request
     async ForgotPass({ commit }, email) {
       try {
-        const response = await axiosInstance.post("/api/password_reset/", {
-          email: email,
-        });
+        const response = await axiosInstance.post(
+          "/api/password_reset/", 
+          {email: email}
+        );
         return response;
       } catch (error) {
         return error.response
@@ -132,7 +133,8 @@ export default {
     // Password reset confirm
     async PasswordReset({ commit }, data) {
       try {
-        const response = await axiosInstance.post("/api/password_reset/confirm/",
+        const response = await axiosInstance.post(
+          "/api/password_reset/confirm/",
           data
         );
         return response;

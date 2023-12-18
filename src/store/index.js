@@ -22,10 +22,10 @@ import user from "./modules/Users/user";
 
 import ModalPictogramaList from "./modules/ModalPictogramaList/ModalPictogramaList";
 
-import axiosInstance from '../services/axios';
-import refreshTokenInstance from '../services/refreshToken';
+import axiosInstance from '@/services/axios';
+import refreshTokenInstance from '@/services/refreshToken';
 
-import router from '../router/index';
+import router from '@/router/index';
 
 
 export default createStore({
@@ -51,6 +51,7 @@ export default createStore({
     },
     updateStorageData(state, storageData) {
       state.storageData = storageData;
+      console.log('updateStorageData', storageData);
     },
     clearStorageData(state) {
       state.storageData = null;
@@ -78,7 +79,7 @@ export default createStore({
     async authenticate({ commit }, data) {
       try {
         const response = await axiosInstance.post(
-          `${import.meta.env.VITE_APP_BACKEND_API}/api/login/`, 
+          `/api/login/`, 
           data    
         );
         return response;
