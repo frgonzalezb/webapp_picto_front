@@ -23,7 +23,7 @@ export default {
     ...mapActions("navBar", ["ActiveNav", "InactiveNav"]),
 
     async activateAccount() {
-      await axiosInstance.get(`api/activate/${this.activationToken}/`)
+      await axiosInstance.get(`/api/activate/${this.activationToken}/`)
         .then(response => {
           this.showSuccessAlert();
           this.$router.push('/login/');
