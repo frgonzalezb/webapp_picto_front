@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/registro/",
+      "destination": "/registro/"
+    }
+  ]
+}
