@@ -105,7 +105,7 @@ const routes = [
     },
   },
   {
-    path: "/activate/",
+    path: "/activate/:token*",
     name: "ActivateAccount",
     component: ActivateAccount,
     beforeEnter: (to, from, next) => {
