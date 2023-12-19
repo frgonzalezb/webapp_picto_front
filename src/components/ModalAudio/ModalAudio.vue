@@ -331,7 +331,7 @@ export default {
         this.changeOpenModalAudio();
       } else {
         const msg = 'Formulario no válido o espacio insuficiente. \
-          Si el problema persiste, contacte al administrador.';
+        Si el problema persiste, contáctanos.';
         console.error(msg);
       }
     },
@@ -408,7 +408,7 @@ export default {
         this.closeModal();
       } else {
         const msg = 'Formulario no válido o espacio insuficiente. \
-          Si el problema persiste, contacte al administrador.';
+          Si el problema persiste, contáctanos.';
         console.error(msg);
       }
     },

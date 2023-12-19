@@ -147,7 +147,7 @@ export default {
         
       } catch (error) {
         const console_msg = 'Error al solicitar los datos. \
-          Si el problema persiste, contacte al administrador.';
+          Si el problema persiste, contáctanos.';
         console.error(console_msg);
 
         const msg = 'Parece que tenemos un problema para recuperar tus datos. \

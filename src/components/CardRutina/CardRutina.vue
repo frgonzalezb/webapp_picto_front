@@ -60,29 +60,35 @@ export default {
     updateRutina() {
       this.SearchRutinaObj(this.rutina.id).then(response => {
         if (!response) {
-          const msg = 'Parece que nos quedamos sin señal. \
-          Revisa tu conexión y vuelve a intentarlo. Si el problema persiste, \
-          contáctanos.'
+          const text = 'Parece que nos quedamos sin señal. \
+          Revisa tu conexión y vuelve a intentarlo. \
+          Si el problema persiste, contáctanos.'
 
           this.$swal.fire({
             title: '¡Ups!',
-            text: msg,
+            text: text,
             icon: 'error',
           });
           return;
 
         } else if (response.status == 200) {
-          this.$router.push("/crear-nueva-rutina/");
+          this.$swal.fire({
+            title: '¡Bien!',
+            text: 'Rutina guardada correctamente.',
+            icon: 'success',
+          });
+          return;
 
         } else {
-          const msg = 'Parece que no podemos encontrar esa rutina. \
+          const text = 'Parece que no podemos encontrar esa rutina. \
           Si el problema persiste, contáctanos.';
 
           this.$swal.fire({
             title: '¡Ups!',
-            text: msg,
+            text: text,
             icon: 'error',
           });
+          return;
         }
       });
     },
@@ -95,7 +101,7 @@ export default {
           showCancelButton: true,
           confirmButtonColor: "#1e9c96",
           cancelButtonColor: "#ef2e55",
-          confirmButtonText: "Si, Eliminar",
+          confirmButtonText: "Si, eliminar",
         })
         .then((result) => {
 
@@ -106,17 +112,20 @@ export default {
 
                 if (response.status == 200) {
                   this.$swal.fire({
-                    title: "¡Eliminado!",
-                    text: "Rutina Eliminado Correctamente",
+                    title: "¡Bien!",
+                    text: "Rutina eliminada correctamente",
                     icon: "success",
                     confirmButtonColor: "#1e9c96",
                     confirmButtonText: "OK",
                   });
                   this.get_rutinas();
                 } else {
+                  const text = 'No se pudo guardar la rutina. \
+                  Intenta nuevamente y disculpa las molestias. 🙏';
+
                   this.$swal.fire({
-                    title: "¡Error!",
-                    text: "¡Ups! Ocurrio un Inconveniente CARDRUTINA 1",
+                    title: "¡Ups!",
+                    text: text,
                     icon: "error",
                     confirmButtonColor: "#1e9c96",
                     confirmButtonText: "OK",
@@ -124,9 +133,12 @@ export default {
                 }
               });
             } catch (error) {
+              const text = 'Ocurrio un error inesperado. \
+                Si el problema persiste, contáctanos.';
+
               this.$swal.fire({
-                title: "¡Error!",
-                text: "¡Ups! Ocurrio un Inconveniente CARDRUTINA 2",
+                title: "¡Ups!",
+                text: text,
                 icon: "error",
                 confirmButtonColor: "#1e9c96",
                 confirmButtonText: "OK",

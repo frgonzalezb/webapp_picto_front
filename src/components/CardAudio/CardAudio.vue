@@ -89,16 +89,19 @@ export default {
                 if (response.status == 200) {
                   this.$swal.fire({
                     title: "¡Eliminado!",
-                    text: "Audio Eliminado Correctamente",
+                    text: "Audio eliminado correctamente",
                     icon: "success",
                     confirmButtonColor: "#1e9c96",
                     confirmButtonText: "OK",
                   });
                   this.get_audios();
                 } else {
+                  const text = 'No se pudo guardar el audio. \
+                  Intenta nuevamente y disculpa las molestias. 🙏';
+
                   this.$swal.fire({
-                    title: "¡Error!",
-                    text: "¡Ups! Ocurrio un Inconveniente",
+                    title: "¡Ups!",
+                    text: text,
                     icon: "error",
                     confirmButtonColor: "#1e9c96",
                     confirmButtonText: "OK",
@@ -106,9 +109,12 @@ export default {
                 }
               });
             } catch (error) {
+              const text = 'Ocurrio un error inesperado. \
+                Si el problema persiste, contáctanos.';
+
               this.$swal.fire({
-                title: "¡Error!",
-                text: "¡Ups! Ocurrio un error insperado",
+                title: "¡Ups!",
+                text: text,
                 icon: "error",
                 confirmButtonColor: "#1e9c96",
                 confirmButtonText: "OK",

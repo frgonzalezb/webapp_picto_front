@@ -101,16 +101,19 @@ export default {
                 if (response.status == 200) {
                   this.$swal.fire({
                     title: "¡Eliminado!",
-                    text: "Pictograma Eliminado Correctamente",
+                    text: "Pictograma eliminado correctamente",
                     icon: "success",
                     confirmButtonColor: "#1e9c96",
                     confirmButtonText: "OK",
                   });
                   this.get_pictogramas();
                 } else {
+                  const text = 'No se pudo guardar la rutina. \
+                    Intenta nuevamente y disculpa las molestias. 🙏';
+
                   this.$swal.fire({
-                    title: "¡Error!",
-                    text: "¡Ups! Ocurrio un Inconveniente ERRORSILLO BORRAR",
+                    title: "¡Ups!",
+                    text: text,
                     icon: "error",
                     confirmButtonColor: "#1e9c96",
                     confirmButtonText: "OK",
@@ -118,9 +121,12 @@ export default {
                 }
               });
             } catch (error) {
+              const text = 'Ocurrio un error inesperado. \
+                Si el problema persiste, contáctanos.';
+
               this.$swal.fire({
-                title: "¡Error!",
-                text: "¡Ups! Ocurrio un Inconveniente CATCH BORRAR",
+                title: "¡Ups!",
+                text: text,
                 icon: "error",
                 confirmButtonColor: "#1e9c96",
                 confirmButtonText: "OK",

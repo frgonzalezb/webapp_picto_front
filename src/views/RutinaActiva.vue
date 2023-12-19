@@ -331,12 +331,35 @@ export default {
             } else {
               layer.add(elemento(attrs));
             }
+          } else {
+            const text = 'No es posible encontrar un elemento de la rutina. \
+              Verifica que todos los elementos de la rutina existan y que no\
+              hayan sido actualizados o eliminados. Es decir, que posean \
+              exactamente las mismas características (imagen, audio, \
+              nombre, etc.).';
+            
+            this.$swal.fire({
+              title: "¡Ups!",
+              text: text,
+              icon: "error",
+              confirmButtonColor: "#1e9c96",
+              confirmButtonText: "OK",
+            });
           }
         });
       } catch (error) {
-        const console_msg = 'Error al solicitar los datos. \
-          Si el problema persiste, contacte al administrador.';
-        console.error(console_msg);
+        const text = 'Error inesperado al obtener los datos de la rutina. \
+          Si el problema persiste, contáctanos.';
+
+        console.error(text);
+
+        this.$swal.fire({
+          title: "¡Ups!",
+          text: text,
+          icon: "error",
+          confirmButtonColor: "#1e9c96",
+          confirmButtonText: "OK",
+        });
       }
     }
 

@@ -72,7 +72,7 @@ export default {
 
       } catch (error) {
         const msg = 'Error al solicitar los datos. \
-          Si el problema persiste, contacte al administrador.';
+          Si el problema persiste, contáctanos.';
         console.error(msg);
       }
     },
