@@ -129,7 +129,7 @@ const routes = [
     },
   },
   {
-    path: "/restablecer-contrasena/",
+    path: "/restablecer-contrasena/:token*",
     name: "resetPassword",
     component: resetPassword,
     beforeEnter: (to, from, next) => {

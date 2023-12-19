@@ -87,7 +87,7 @@ export default {
   },
   computed: {
     token() {
-      const token = this.$route.query.token;
+      const token = this.$route.params.token;
 
       if (!token) {
         this.$router.push('/');
