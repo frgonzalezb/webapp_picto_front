@@ -347,7 +347,7 @@ export default {
           "success", 
           "#1e9c96"
         );
-        this.get_rutinas();
+        return;
       } else {
         const msg = "No podemos crear la rutina. \
         Revisa que tengas suficiente espacio disponible para almacenarla.\
@@ -400,7 +400,7 @@ export default {
           this.handleError(error, "Parece que currió un error inesperado.");
         }
         this.closeModal();
-        this.$router.push("/rutinas/");
+        return;
       } else {
         const msg = 'Formulario no válido o espacio insuficiente. \
         Si el problema persiste, contáctanos.';
@@ -440,8 +440,7 @@ export default {
           "#1e9c96"
         );
         this.CloseModalRutina();
-        this.$router.push("/rutinas/");
-        this.get_rutinas();
+        return;
       } else {
         const msg = "No podemos actualizar la rutina. \
         Revisa que tengas suficiente espacio disponible para almacenarla.\
