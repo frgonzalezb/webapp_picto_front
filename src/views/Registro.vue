@@ -224,7 +224,7 @@ export default {
     },
 
     passwordComplexityValidator(password) {
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_\/@$!%*?&])[A-Za-z\d\-_\/@$!%*?&]/;;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_\/@$!%*?&.,:;])[A-Za-z\d\-_\/@$!%*?&.,:;]/;
       return passwordRegex.test(password);
     },
 
