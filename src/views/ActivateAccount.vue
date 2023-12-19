@@ -16,7 +16,7 @@ export default {
   },
   mounted() {
     this.ActiveNav();
-    this.activationToken = this.$route.query.token;
+    this.activationToken = this.$route.params.token;
     this.activateAccount();
   },
   methods: {
