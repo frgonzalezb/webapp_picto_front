@@ -72,12 +72,7 @@ export default {
           return;
 
         } else if (response.status == 200) {
-          this.$swal.fire({
-            title: '¡Bien!',
-            text: 'Rutina guardada correctamente.',
-            icon: 'success',
-          });
-          return;
+          this.$router.push("/crear-nueva-rutina/");
 
         } else {
           const text = 'Parece que no podemos encontrar esa rutina. \
